@@ -30,10 +30,7 @@ export default function Home() {
         {/* Main Navbar */}
         <nav className="bg-slate-950/95 backdrop-blur-md border-b border-slate-800 px-8 py-3.5">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-            
-            {/* Logo Section */}
             <a href="/" className="flex items-center gap-3">
-              {/* إيلا عندك اللوغو كصورة حطي <img src="/logo.png" alt="ELECLEF" className="h-9 w-auto" /> */}
               <div className="w-9 h-9 rounded-md bg-orange-600 flex items-center justify-center font-bold text-white text-lg shadow-sm">
                 ⚡
               </div>
@@ -43,14 +40,12 @@ export default function Home() {
               </div>
             </a>
 
-            {/* Navigation Links */}
             <div className="flex items-center gap-8 text-sm font-semibold text-slate-300">
               <a href="/" className="text-orange-500 border-b-2 border-orange-500 pb-1">Accueil</a>
               <a href="/services" className="hover:text-orange-400 transition">Nos Services</a>
               <a href="/contact" className="hover:text-orange-400 transition">Contact / Devis</a>
             </div>
 
-            {/* Admin Button */}
             <a href="/admin" className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2.5 rounded-lg transition duration-200 shadow-sm">
               Espace Admin
             </a>
