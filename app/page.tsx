@@ -8,7 +8,7 @@ export default function Home() {
       {/* Header Section */}
       <header className="w-full border-b border-slate-200">
         
-        {/* Top Info Bar (Clean White/Gray) */}
+        {/* Top Info Bar */}
         <div className="bg-slate-100 text-slate-600 text-xs py-2 px-8 border-b border-slate-200">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
             <div className="flex items-center gap-6 font-medium">
@@ -27,18 +27,20 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Main Header & Branding */}
-        <div className="max-w-7xl mx-auto px-8 py-4 flex flex-wrap justify-between items-center gap-4 bg-white">
+        {/* Main Header & Real Official Logo */}
+        <div className="max-w-7xl mx-auto px-8 py-3 flex flex-wrap justify-between items-center gap-4 bg-white">
           <a href="/" className="flex items-center gap-3">
-            {/* Logo matching the cable concept simply */}
-            <div className="flex items-center gap-1">
-              <span className="text-red-600 text-3xl font-black">⚡</span>
-              <span className="text-3xl font-black text-slate-900 tracking-tight">ELECLEF</span>
-            </div>
-            <div className="hidden md:flex flex-col gap-1 ml-2">
-              <div className="w-10 h-1 bg-blue-600 rounded"></div>
-              <div className="w-10 h-1 bg-amber-500 rounded"></div>
-            </div>
+            {/* اللوجو الرسمي الأصلي بالصورة من الموقع */}
+            <img 
+              src="https://eleclef.com/images/logo.png" 
+              alt="ELECLEF Logo" 
+              className="h-12 w-auto object-contain"
+              onError={(e) => {
+                // حل بديل إيلا كانت الصورة محمية
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'https://www.eleclef.com/templates/eleclef/images/logo.png';
+              }}
+            />
           </a>
 
           <a 
@@ -61,7 +63,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Main Content Area (Clean Professional Layout) */}
+      {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-8 py-12 w-full my-auto grid md:grid-cols-12 gap-8 items-center">
         
         {/* Left Column: Main Text & Services List */}
@@ -104,7 +106,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column: Industrial Aesthetic Card (No AI Gradients) */}
+        {/* Right Column: Industrial Aesthetic Card */}
         <div className="md:col-span-5 bg-slate-100 border border-slate-300 rounded-lg p-6 shadow-sm">
           <h3 className="text-slate-900 font-bold border-b border-slate-300 pb-3 mb-4 uppercase text-sm tracking-wide">
             Expertise & Engagements
