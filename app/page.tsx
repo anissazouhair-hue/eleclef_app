@@ -8,7 +8,7 @@ export default function Home() {
       {/* Header Section */}
       <header className="w-full border-b border-slate-200">
         
-        {/* Top Info Bar */}
+        {/* Top Info Bar (Clean White/Gray) */}
         <div className="bg-slate-100 text-slate-600 text-xs py-2 px-8 border-b border-slate-200">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
             <div className="flex items-center gap-6 font-medium">
@@ -27,20 +27,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Main Header & Real Official Logo */}
-        <div className="max-w-7xl mx-auto px-8 py-3 flex flex-wrap justify-between items-center gap-4 bg-white">
+        {/* Main Header with Modern Authentic Logo */}
+        <div className="max-w-7xl mx-auto px-8 py-3.5 flex flex-wrap justify-between items-center gap-4 bg-white">
           <a href="/" className="flex items-center gap-3">
-            {/* اللوجو الرسمي الأصلي بالصورة من الموقع */}
-            <img 
-              src="https://eleclef.com/images/logo.png" 
-              alt="ELECLEF Logo" 
-              className="h-12 w-auto object-contain"
-              onError={(e) => {
-                // حل بديل إيلا كانت الصورة محمية
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = 'https://www.eleclef.com/templates/eleclef/images/logo.png';
-              }}
-            />
+            {/* الشرارة الحمراء الأصلية بستايل معصرن ونظيف */}
+            <div className="w-10 h-10 bg-red-600 rounded-md flex items-center justify-center shadow-sm">
+              <span className="text-white text-xl font-bold">⚡</span>
+            </div>
+
+            <div className="flex flex-col">
+              {/* اسم الشركة ELECLEF */}
+              <span className="text-2xl font-black text-slate-900 tracking-wide leading-none">
+                ELECLEF
+              </span>
+              {/* خيوط الكهرباء الأزرق والبرتقالي مبسطين ومودرن */}
+              <div className="flex items-center gap-1 mt-1.5">
+                <div className="h-1 w-6 bg-blue-600 rounded-full"></div>
+                <div className="h-1 w-6 bg-amber-500 rounded-full"></div>
+              </div>
+            </div>
           </a>
 
           <a 
@@ -51,19 +56,17 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Navigation Bar (Classic Corporate Blue) */}
+        {/* Navigation Bar (3 Main Links Only) */}
         <nav className="bg-blue-800 text-white px-8">
-          <div className="max-w-7xl mx-auto flex items-center gap-1 text-sm font-semibold uppercase">
-            <a href="/" className="bg-blue-950 px-5 py-3 text-orange-400 border-b-2 border-orange-400">ACCUEIL</a>
-            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">ELECLEF</a>
-            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">NOS ACTIVITÉS</a>
-            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">NOS RÉFÉRENCES</a>
-            <a href="/contact" className="hover:bg-blue-700 px-5 py-3 transition">CONTACTEZ-NOUS</a>
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-sm font-semibold">
+            <a href="/" className="bg-blue-950 px-5 py-3 text-orange-400 border-b-2 border-orange-400">Accueil</a>
+            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">Nos Services</a>
+            <a href="/contact" className="hover:bg-blue-700 px-5 py-3 transition">Contact / Devis</a>
           </div>
         </nav>
       </header>
 
-      {/* Main Content Area */}
+      {/* Main Content Area (Clean Professional Layout) */}
       <main className="max-w-7xl mx-auto px-8 py-12 w-full my-auto grid md:grid-cols-12 gap-8 items-center">
         
         {/* Left Column: Main Text & Services List */}
@@ -106,7 +109,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column: Industrial Aesthetic Card */}
+        {/* Right Column: Industrial Expertise Card */}
         <div className="md:col-span-5 bg-slate-100 border border-slate-300 rounded-lg p-6 shadow-sm">
           <h3 className="text-slate-900 font-bold border-b border-slate-300 pb-3 mb-4 uppercase text-sm tracking-wide">
             Expertise & Engagements
