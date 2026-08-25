@@ -3,35 +3,23 @@
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col justify-between">
       
       {/* Header Section */}
-      <header className="fixed top-0 left-0 w-full z-50 shadow-lg">
+      <header className="w-full border-b border-slate-200">
         
-        {/* Top Info Bar (Dark Header with Cables aesthetic) */}
-        <div className="bg-zinc-950 text-slate-200 text-xs py-3 px-6 border-b border-zinc-800">
+        {/* Top Info Bar (Clean White/Gray) */}
+        <div className="bg-slate-100 text-slate-600 text-xs py-2 px-8 border-b border-slate-200">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-            
-            {/* Branding / Logo with Red Bolt & Cables */}
-            <a href="/" className="flex items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="text-red-600 text-2xl font-black">⚡</span>
-                <span className="text-2xl font-black tracking-wider text-white">ELECLEF</span>
-              </div>
-              <div className="hidden md:flex items-center ml-4 gap-1">
-                <div className="w-12 h-1 bg-blue-500 rounded-full"></div>
-                <div className="w-12 h-1 bg-amber-500 rounded-full"></div>
-              </div>
-            </a>
-
-            {/* Contact details copied directly from origin */}
-            <div className="flex flex-wrap items-center gap-6 font-semibold text-zinc-300">
-              <span>FIXE : <strong className="text-white">05 35 94 19 54</strong></span>
-              <span>GSM : <strong className="text-white">+212 6 61 46 77 64</strong></span>
-              <span className="hidden sm:inline">FAX : <strong className="text-white">05 35 65 00 14</strong></span>
+            <div className="flex items-center gap-6 font-medium">
+              <span>FIXE: <strong className="text-slate-900">05 35 94 19 54</strong></span>
+              <span>GSM: <strong className="text-slate-900">+212 6 61 46 77 64</strong></span>
+              <span className="hidden sm:inline">FAX: <strong className="text-slate-900">05 35 65 00 14</strong></span>
+            </div>
+            <div>
               <a 
                 href="mailto:CONTACT@ELECLEF.COM" 
-                className="bg-blue-700 hover:bg-blue-600 px-3 py-1 rounded text-white font-medium border border-blue-500 transition shadow-sm"
+                className="text-blue-700 hover:underline font-semibold"
               >
                 ✉ CONTACT@ELECLEF.COM
               </a>
@@ -39,76 +27,107 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Royal Blue Navigation Bar */}
-        <nav className="bg-blue-700 border-b border-blue-800 px-6 py-2.5">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-6 text-sm font-bold text-white uppercase tracking-wide">
-              <a href="/" className="bg-blue-900/60 px-3 py-1.5 rounded border-b-2 border-orange-500">ACCUEIL</a>
-              <a href="/services" className="hover:text-orange-300 transition">ELECLEF</a>
-              <a href="/services" className="hover:text-orange-300 transition">NOS ACTIVITÉS</a>
-              <a href="/services" className="hover:text-orange-300 transition">NOS RÉFÉRENCES</a>
-              <a href="/contact" className="hover:text-orange-300 transition">CONTACTEZ-NOUS</a>
+        {/* Main Header & Branding */}
+        <div className="max-w-7xl mx-auto px-8 py-4 flex flex-wrap justify-between items-center gap-4 bg-white">
+          <a href="/" className="flex items-center gap-3">
+            {/* Logo matching the cable concept simply */}
+            <div className="flex items-center gap-1">
+              <span className="text-red-600 text-3xl font-black">⚡</span>
+              <span className="text-3xl font-black text-slate-900 tracking-tight">ELECLEF</span>
             </div>
+            <div className="hidden md:flex flex-col gap-1 ml-2">
+              <div className="w-10 h-1 bg-blue-600 rounded"></div>
+              <div className="w-10 h-1 bg-amber-500 rounded"></div>
+            </div>
+          </a>
 
-            <a href="/admin" className="text-xs font-bold text-white bg-orange-600 hover:bg-orange-500 px-3.5 py-2 rounded transition shadow">
-              ESPACE ADMIN
-            </a>
+          <a 
+            href="/admin" 
+            className="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300 transition"
+          >
+            Espace Admin
+          </a>
+        </div>
+
+        {/* Navigation Bar (Classic Corporate Blue) */}
+        <nav className="bg-blue-800 text-white px-8">
+          <div className="max-w-7xl mx-auto flex items-center gap-1 text-sm font-semibold uppercase">
+            <a href="/" className="bg-blue-950 px-5 py-3 text-orange-400 border-b-2 border-orange-400">ACCUEIL</a>
+            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">ELECLEF</a>
+            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">NOS ACTIVITÉS</a>
+            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">NOS RÉFÉRENCES</a>
+            <a href="/contact" className="hover:bg-blue-700 px-5 py-3 transition">CONTACTEZ-NOUS</a>
           </div>
         </nav>
       </header>
 
-      {/* Hero Section matching the original banner structure */}
-      <main className="pt-36 pb-16 px-6 max-w-7xl mx-auto w-full my-auto">
-        <div className="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 rounded-2xl p-8 md:p-14 shadow-2xl relative overflow-hidden border border-orange-500/30">
-          
-          <div className="max-w-3xl relative z-10">
-            <h1 className="text-3xl md:text-5xl font-black text-white leading-tight uppercase tracking-tight mb-4 drop-shadow">
-              BIENVENUE CHEZ ELECLEF
-            </h1>
+      {/* Main Content Area (Clean Professional Layout) */}
+      <main className="max-w-7xl mx-auto px-8 py-12 w-full my-auto grid md:grid-cols-12 gap-8 items-center">
+        
+        {/* Left Column: Main Text & Services List */}
+        <div className="md:col-span-7 space-y-6">
+          <div className="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            Installations Électriques MT & BT
+          </div>
 
-            <h2 className="text-xl md:text-3xl font-extrabold text-orange-100 uppercase leading-snug mb-6">
-              VOTRE PARTENAIRE D'INSTALLATION D'ÉQUIPEMENTS ÉLECTRIQUES MT & BT
-            </h2>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+            BIENVENUE CHEZ ELECLEF
+          </h1>
 
-            {/* Original Bullets List */}
-            <ul className="space-y-2.5 text-slate-100 text-sm md:text-base font-medium mb-8 bg-black/20 p-5 rounded-xl backdrop-blur-sm border border-white/10">
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">▪</span> Bâtiments ou les lieux publics
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">▪</span> Grands ensembles d'habitat
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">▪</span> Électrification BT, MT
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">▪</span> Usage industriel
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">▪</span> Incendie et extinction automatique
-              </li>
+          <p className="text-lg font-bold text-blue-900 leading-snug">
+            VOTRE PARTENAIRE D'INSTALLATION D'ÉQUIPEMENTS ÉLECTRIQUES MT & BT
+          </p>
+
+          <div className="border-l-4 border-orange-500 pl-4 py-1 bg-slate-50 rounded-r">
+            <ul className="space-y-2 text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Bâtiments ou les lieux publics</li>
+              <li className="flex items-center gap-2">✓ Grands ensembles d'habitat</li>
+              <li className="flex items-center gap-2">✓ Électrification BT, MT</li>
+              <li className="flex items-center gap-2">✓ Usage industriel</li>
+              <li className="flex items-center gap-2">✓ Incendie et extinction automatique</li>
             </ul>
+          </div>
 
-            <div className="flex gap-4">
-              <a
-                href="/services"
-                className="px-6 py-3 rounded-lg font-bold text-white bg-blue-700 hover:bg-blue-600 transition shadow-lg uppercase text-sm"
-              >
-                PLUS DE DÉTAILS
-              </a>
-              <a
-                href="/contact"
-                className="px-6 py-3 rounded-lg font-bold text-white bg-zinc-900 hover:bg-zinc-800 transition shadow-lg uppercase text-sm border border-zinc-700"
-              >
-                DEMANDER UN DEVIS
-              </a>
+          <div className="pt-2 flex flex-wrap gap-4">
+            <a
+              href="/services"
+              className="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded text-sm uppercase transition shadow-sm"
+            >
+              PLUS DE DÉTAILS
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded text-sm uppercase transition shadow-sm"
+            >
+              DEMANDER UN DEVIS
+            </a>
+          </div>
+        </div>
+
+        {/* Right Column: Industrial Aesthetic Card (No AI Gradients) */}
+        <div className="md:col-span-5 bg-slate-100 border border-slate-300 rounded-lg p-6 shadow-sm">
+          <h3 className="text-slate-900 font-bold border-b border-slate-300 pb-3 mb-4 uppercase text-sm tracking-wide">
+            Expertise & Engagements
+          </h3>
+          <p className="text-slate-600 text-sm leading-relaxed mb-4">
+            ELECLEF intervient dans l'étude, la réalisation et le suivi de vos projets d'équipements électriques à travers tout le Maroc.
+          </p>
+          <div className="bg-white p-4 rounded border border-slate-200 text-xs text-slate-700 space-y-2">
+            <div className="flex justify-between font-semibold">
+              <span>Secteur:</span>
+              <span className="text-slate-900">Industriel & Tertiaire</span>
+            </div>
+            <div className="flex justify-between font-semibold">
+              <span>Normes:</span>
+              <span className="text-slate-900">Conformité MT/BT</span>
             </div>
           </div>
         </div>
+
       </main>
 
       {/* Footer */}
-      <footer className="text-center py-5 text-xs text-zinc-400 border-t border-zinc-800 bg-zinc-950">
+      <footer className="bg-slate-900 text-slate-400 text-center py-4 text-xs border-t border-slate-800">
         <p>&copy; 2026 ELECLEF - Installations Électriques MT & BT. Tous droits réservés.</p>
       </footer>
 
