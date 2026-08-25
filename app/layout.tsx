@@ -2,8 +2,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'ELECLEF - Travaux d Électricité',
-  description: 'Solutions Électriques Professionnelles',
+  title: 'ELECLEF - Travaux d\'Électricité MT & BT',
+  description: 'Installation et maintenance d\'équipements électriques au Maroc',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="bg-slate-950 text-slate-100 antialiased">
+      <body className="bg-slate-900 text-slate-100 font-sans antialiased">
         {children}
       </body>
     </html>
