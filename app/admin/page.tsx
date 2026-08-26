@@ -6,11 +6,10 @@ import { useState } from 'react';
 export default function AdminPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // حالة إظهار/إخفاء كلمة السر
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState('');
 
-  // Demandes / Messages fictifs pour le test
   const [messages] = useState([
     { id: 1, name: 'Sarl Atlas Elec', email: 'contact@atlaselec.ma', phone: '0661223344', subject: 'Devis Électrification Usine', date: '2026-08-25', status: 'Nouveau' },
     { id: 2, name: 'Karim Bennani', email: 'k.bennani@gmail.com', phone: '0655443322', subject: 'Installation Poste MT/BT', date: '2026-08-24', status: 'En traitement' },
@@ -84,34 +83,22 @@ export default function AdminPage() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Mot de passe</label>
-                <div className="relative">
+                <div className="relative flex items-center">
                   <input 
                     type={showPassword ? 'text' : 'password'} 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm pr-10 focus:outline-none focus:border-[#7A1523]" 
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm pr-24 focus:outline-none focus:border-[#7A1523]" 
                     placeholder="••••••••" 
                   />
-                  {/* أزرار العين إظهار / إخفاء */}
+                  {/* زر إظهار/إخفاء كلمة السر */}
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#7A1523] focus:outline-none text-xs font-bold p-1"
-                    title={showPassword ? "Masquer" : "Afficher"}
+                    className="absolute right-2 px-2.5 py-1 text-xs font-bold text-[#7A1523] bg-red-50 hover:bg-red-100 rounded transition border border-red-200 select-none"
                   >
-                    {showPassword ? (
-                      /* أيقونة العين المغلقة */
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
-                      </svg>
-                    ) : (
-                      /* أيقونة العين المفتوحة */
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12c1.318 4.026 5.253 7 9.964 7 4.71 0 8.646-2.974 9.964-7-1.318-4.026-5.254-7-9.964-7-4.71 0-8.646 2.974-9.964 7z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    )}
+                    {showPassword ? '👁️ Masquer' : '👁️ Afficher'}
                   </button>
                 </div>
               </div>
@@ -120,12 +107,6 @@ export default function AdminPage() {
                 SE CONNECTER
               </button>
             </form>
-
-            <div className="mt-6 p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-500 space-y-1">
-              <p className="font-bold text-slate-700">📌 Données de test :</p>
-              <p>Email: <code className="text-[#7A1523]">admin@eleclef.com</code></p>
-              <p>Pass: <code className="text-[#7A1523]">eleclef2026</code></p>
-            </div>
           </div>
         ) : (
           /* Admin Dashboard After Login */
