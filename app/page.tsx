@@ -3,128 +3,130 @@
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col justify-between">
       
-      {/* Header Section */}
-      <header className="w-full border-b border-slate-200">
+      {/* Top Header & Navigation */}
+      <header className="w-full border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-50">
         
-        {/* Top Info Bar (Clean White/Gray) */}
-        <div className="bg-slate-100 text-slate-600 text-xs py-2 px-8 border-b border-slate-200">
+        {/* Top Info Strip */}
+        <div className="bg-slate-950 text-slate-300 text-xs py-2 px-8 border-b border-slate-800/60">
           <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-            <div className="flex items-center gap-6 font-medium">
-              <span>FIXE: <strong className="text-slate-900">05 35 94 19 54</strong></span>
-              <span>GSM: <strong className="text-slate-900">+212 6 61 46 77 64</strong></span>
-              <span className="hidden sm:inline">FAX: <strong className="text-slate-900">05 35 65 00 14</strong></span>
+            <div className="flex items-center gap-6 font-medium tracking-wide">
+              <span>FIXE: <strong className="text-white">05 35 94 19 54</strong></span>
+              <span>GSM: <strong className="text-white">+212 6 61 46 77 64</strong></span>
+              <span className="hidden sm:inline">FAX: <strong className="text-white">05 35 65 00 14</strong></span>
             </div>
-            <div>
-              <a 
-                href="mailto:CONTACT@ELECLEF.COM" 
-                className="text-blue-700 hover:underline font-semibold"
-              >
-                ✉ CONTACT@ELECLEF.COM
-              </a>
-            </div>
+            <a 
+              href="mailto:CONTACT@ELECLEF.COM" 
+              className="text-blue-400 hover:text-blue-300 font-semibold transition"
+            >
+              ✉ CONTACT@ELECLEF.COM
+            </a>
           </div>
         </div>
 
-        {/* Main Header with Modern Authentic Logo */}
-        <div className="max-w-7xl mx-auto px-8 py-3.5 flex flex-wrap justify-between items-center gap-4 bg-white">
-          <a href="/" className="flex items-center gap-3">
-            {/* الشرارة الحمراء الأصلية بستايل معصرن ونظيف */}
-            <div className="w-10 h-10 bg-red-600 rounded-md flex items-center justify-center shadow-sm">
-              <span className="text-white text-xl font-bold">⚡</span>
+        {/* Main Navigation & Modern Refined Logo */}
+        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+          
+          {/* Logo with Car-Brand Style Facelift (Exact original elements, modern finish) */}
+          <a href="/" className="flex items-center gap-3 group">
+            {/* Red Flame/Spark Bolt */}
+            <div className="text-3xl text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.5)] transform group-hover:scale-105 transition duration-200">
+              ⚡
             </div>
 
             <div className="flex flex-col">
-              {/* اسم الشركة ELECLEF */}
-              <span className="text-2xl font-black text-slate-900 tracking-wide leading-none">
+              <span className="text-2xl font-black tracking-widest text-white leading-none">
                 ELECLEF
               </span>
-              {/* خيوط الكهرباء الأزرق والبرتقالي مبسطين ومودرن */}
+              {/* Electric Cables Aesthetic (Streamlined & Clean) */}
               <div className="flex items-center gap-1 mt-1.5">
-                <div className="h-1 w-6 bg-blue-600 rounded-full"></div>
-                <div className="h-1 w-6 bg-amber-500 rounded-full"></div>
+                <div className="h-1 w-7 bg-blue-500 rounded-full shadow-sm"></div>
+                <div className="h-1 w-7 bg-amber-500 rounded-full shadow-sm"></div>
               </div>
             </div>
           </a>
 
+          {/* Navigation Links (3 Essential Links) */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wider">
+            <a href="/" className="text-orange-500 border-b-2 border-orange-500 pb-1">Accueil</a>
+            <a href="/services" className="text-slate-300 hover:text-orange-400 transition">Nos Services</a>
+            <a href="/contact" className="text-slate-300 hover:text-orange-400 transition">Contact / Devis</a>
+          </nav>
+
           <a 
             href="/admin" 
-            className="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300 transition"
+            className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 px-4 py-2.5 rounded-lg transition shadow-md"
           >
             Espace Admin
           </a>
         </div>
-
-        {/* Navigation Bar (3 Main Links Only) */}
-        <nav className="bg-blue-800 text-white px-8">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-sm font-semibold">
-            <a href="/" className="bg-blue-950 px-5 py-3 text-orange-400 border-b-2 border-orange-400">Accueil</a>
-            <a href="/services" className="hover:bg-blue-700 px-5 py-3 transition">Nos Services</a>
-            <a href="/contact" className="hover:bg-blue-700 px-5 py-3 transition">Contact / Devis</a>
-          </div>
-        </nav>
       </header>
 
-      {/* Main Content Area (Clean Professional Layout) */}
-      <main className="max-w-7xl mx-auto px-8 py-12 w-full my-auto grid md:grid-cols-12 gap-8 items-center">
+      {/* Hero Section (Dark Modern Industrial UI) */}
+      <main className="max-w-7xl mx-auto px-8 py-16 w-full my-auto grid md:grid-cols-12 gap-12 items-center">
         
-        {/* Left Column: Main Text & Services List */}
+        {/* Main Content */}
         <div className="md:col-span-7 space-y-6">
-          <div className="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          <div className="inline-block bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest">
             Installations Électriques MT & BT
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-            BIENVENUE CHEZ ELECLEF
+          <h1 className="text-4xl md:text-5xl font-black text-white leading-tight uppercase tracking-tight">
+            BIENVENUE CHEZ <span className="text-orange-500">ELECLEF</span>
           </h1>
 
-          <p className="text-lg font-bold text-blue-900 leading-snug">
+          <p className="text-xl font-bold text-blue-400 leading-snug">
             VOTRE PARTENAIRE D'INSTALLATION D'ÉQUIPEMENTS ÉLECTRIQUES MT & BT
           </p>
 
-          <div className="border-l-4 border-orange-500 pl-4 py-1 bg-slate-50 rounded-r">
-            <ul className="space-y-2 text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Bâtiments ou les lieux publics</li>
-              <li className="flex items-center gap-2">✓ Grands ensembles d'habitat</li>
-              <li className="flex items-center gap-2">✓ Électrification BT, MT</li>
-              <li className="flex items-center gap-2">✓ Usage industriel</li>
-              <li className="flex items-center gap-2">✓ Incendie et extinction automatique</li>
+          <div className="bg-slate-900/80 border border-slate-800 p-6 rounded-xl space-y-3 shadow-xl">
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Nos Domaines d'intervention :</p>
+            <ul className="space-y-2 text-slate-200 text-sm font-medium">
+              <li className="flex items-center gap-3"><span className="text-orange-500 font-bold">▪</span> Bâtiments ou les lieux publics</li>
+              <li className="flex items-center gap-3"><span className="text-orange-500 font-bold">▪</span> Grands ensembles d'habitat</li>
+              <li className="flex items-center gap-3"><span className="text-orange-500 font-bold">▪</span> Électrification BT, MT</li>
+              <li className="flex items-center gap-3"><span className="text-orange-500 font-bold">▪</span> Usage industriel</li>
+              <li className="flex items-center gap-3"><span className="text-orange-500 font-bold">▪</span> Incendie et extinction automatique</li>
             </ul>
           </div>
 
           <div className="pt-2 flex flex-wrap gap-4">
             <a
               href="/services"
-              className="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded text-sm uppercase transition shadow-sm"
+              className="px-8 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-lg text-sm uppercase transition shadow-lg shadow-orange-600/20"
             >
               PLUS DE DÉTAILS
             </a>
             <a
               href="/contact"
-              className="px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded text-sm uppercase transition shadow-sm"
+              className="px-8 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold rounded-lg text-sm uppercase transition"
             >
               DEMANDER UN DEVIS
             </a>
           </div>
         </div>
 
-        {/* Right Column: Industrial Expertise Card */}
-        <div className="md:col-span-5 bg-slate-100 border border-slate-300 rounded-lg p-6 shadow-sm">
-          <h3 className="text-slate-900 font-bold border-b border-slate-300 pb-3 mb-4 uppercase text-sm tracking-wide">
-            Expertise & Engagements
+        {/* Side Card */}
+        <div className="md:col-span-5 bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+          <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <h3 className="text-white font-black border-b border-slate-800 pb-4 mb-4 uppercase text-base tracking-wide flex items-center gap-2">
+            <span className="text-blue-500">⚡</span> Expertise & Engagements
           </h3>
-          <p className="text-slate-600 text-sm leading-relaxed mb-4">
+          
+          <p className="text-slate-300 text-sm leading-relaxed mb-6">
             ELECLEF intervient dans l'étude, la réalisation et le suivi de vos projets d'équipements électriques à travers tout le Maroc.
           </p>
-          <div className="bg-white p-4 rounded border border-slate-200 text-xs text-slate-700 space-y-2">
-            <div className="flex justify-between font-semibold">
-              <span>Secteur:</span>
-              <span className="text-slate-900">Industriel & Tertiaire</span>
+
+          <div className="space-y-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-xs">
+            <div className="flex justify-between items-center">
+              <span className="text-slate-400 font-semibold">Secteur:</span>
+              <span className="text-orange-400 font-bold">Industriel & Tertiaire</span>
             </div>
-            <div className="flex justify-between font-semibold">
-              <span>Normes:</span>
-              <span className="text-slate-900">Conformité MT/BT</span>
+            <div className="flex justify-between items-center">
+              <span className="text-slate-400 font-semibold">Normes:</span>
+              <span className="text-blue-400 font-bold">Conformité MT/BT</span>
             </div>
           </div>
         </div>
@@ -132,7 +134,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 text-center py-4 text-xs border-t border-slate-800">
+      <footer className="bg-slate-950 text-slate-500 text-center py-5 text-xs border-t border-slate-900">
         <p>&copy; 2026 ELECLEF - Installations Électriques MT & BT. Tous droits réservés.</p>
       </footer>
 
