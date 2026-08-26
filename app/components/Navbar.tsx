@@ -1,56 +1,67 @@
-// app/components/Navbar.tsx
 'use client';
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 shadow-md">
-      {/* Top Bar الرسمي ديال ELECLEF */}
-      <div className="bg-blue-900/90 backdrop-blur-sm text-slate-100 text-xs py-2.5 px-8 border-b border-blue-800">
+    <header className="w-full border-b border-red-100 bg-white sticky top-0 z-50 shadow-sm">
+      {/* Top Info Bar */}
+      <div className="bg-[#7A1523] text-slate-100 text-xs py-2 px-8">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
-          <div className="flex items-center gap-6 font-medium">
-            <span><strong className="text-blue-300">FIXE:</strong> 05 35 94 19 54</span>
-            <span><strong className="text-blue-300">GSM:</strong> +212 6 61 46 77 64</span>
-            <span className="hidden sm:inline"><strong className="text-blue-300">FAX:</strong> 05 35 65 00 14</span>
+          <div className="flex items-center gap-6 font-medium tracking-wide">
+            <span>FIXE: <strong className="text-white">05 35 94 19 54</strong></span>
+            <span>GSM: <strong className="text-white">+212 6 61 46 77 64</strong></span>
+            <span className="hidden sm:inline">FAX: <strong className="text-white">05 35 65 00 14</strong></span>
           </div>
-          <div>
-            <a 
-              href="mailto:CONTACT@ELECLEF.COM" 
-              className="bg-blue-800 hover:bg-blue-700 px-3.5 py-1 rounded-md text-white font-semibold transition border border-blue-700 shadow-sm"
-            >
-              CONTACT@ELECLEF.COM
-            </a>
-          </div>
+          <a 
+            href="mailto:CONTACT@ELECLEF.COM" 
+            className="text-amber-300 hover:text-amber-200 font-semibold transition"
+          >
+            ✉ CONTACT@ELECLEF.COM
+          </a>
         </div>
       </div>
 
-      {/* Navbar الرئيسي */}
-      <nav className="bg-slate-950/95 backdrop-blur-md border-b border-slate-800 px-8 py-3.5">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-md bg-orange-600 flex items-center justify-center font-bold text-white text-lg shadow-sm">
-              ⚡
-            </div>
-            <div className="text-2xl font-black tracking-wider text-white">
-              <span className="text-orange-500">ELE</span>
-              <span className="text-blue-500">CLEF</span>
-            </div>
-          </a>
-
-          {/* Navigation Links */}
-          <div className="flex items-center gap-8 text-sm font-semibold text-slate-300">
-            <a href="/" className="text-orange-500 border-b-2 border-orange-500 pb-1">Accueil</a>
-            <a href="/services" className="hover:text-orange-400 transition">Nos Services</a>
-            <a href="/contact" className="hover:text-orange-400 transition">Contact / Devis</a>
+      {/* Main Nav with Logo */}
+      <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+        
+        <a href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <path d="M 22 50 A 28 28 0 1 1 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+              <path d="M 22 50 A 28 28 0 0 0 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+              <polygon points="56,12 28,52 48,52 42,88 74,46 54,46" fill="url(#logo-grad-nav)" />
+              <defs>
+                <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#facc15" />
+                  <stop offset="100%" stopColor="#ea580c" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
 
-          {/* Admin Button */}
-          <a href="/admin" className="text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2.5 rounded-lg transition duration-200 shadow-sm">
-            Espace Admin
-          </a>
-        </div>
-      </nav>
+          <div className="flex flex-col">
+            <span className="text-2xl font-black tracking-widest text-[#7A1523] leading-none">
+              ELECLEF
+            </span>
+            <span className="text-[10px] font-bold tracking-widest text-red-600 uppercase mt-1">
+              Installations Électriques
+            </span>
+          </div>
+        </a>
+
+        {/* Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+          <a href="/" className="text-slate-700 hover:text-red-700 transition">Accueil</a>
+          <a href="/services" className="text-slate-700 hover:text-red-700 transition">Nos Services</a>
+          <a href="/contact" className="text-slate-700 hover:text-red-700 transition">Contact / Devis</a>
+        </nav>
+
+        <a 
+          href="/admin" 
+          className="text-xs font-bold text-white bg-[#7A1523] hover:bg-red-800 px-5 py-2.5 rounded shadow-sm transition"
+        >
+          Espace Admin
+        </a>
+      </div>
     </header>
   );
 }
