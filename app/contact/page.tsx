@@ -1,120 +1,118 @@
 // app/contact/page.tsx
 'use client';
-import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    nom: '',
-    telephone: '',
-    email: '',
-    type_service: 'Installation Électrique',
-    message: '',
-  });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    setSuccess('');
-
-    try {
-      const { error: supabaseError } = await supabase.from('demandes').insert([formData]);
-      if (supabaseError) throw supabaseError;
-      setSuccess('Votre demande de devis a été envoyée avec succès !');
-      setFormData({ nom: '', telephone: '', email: '', type_service: 'Installation Électrique', message: '' });
-    } catch (err) {
-      setError('Une erreur est survenue lors de l\'envoi.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans relative overflow-hidden flex flex-col justify-between">
-      <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[140px] pointer-events-none" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600/25 rounded-full blur-[140px] pointer-events-none" />
-
-      {/* Header */}
-      <header className="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800/80 z-50">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 via-orange-500 to-blue-600 flex items-center justify-center">
-              <span className="text-white text-xl font-black">⚡</span>
+    <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col justify-between relative overflow-hidden">
+      
+      {/* Top Header */}
+      <header className="w-full border-b border-red-100 bg-white sticky top-0 z-50 shadow-sm">
+        <div className="bg-[#7A1523] text-slate-100 text-xs py-2 px-8">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div className="flex items-center gap-6 font-medium tracking-wide">
+              <span>FIXE: <strong className="text-white">05 35 94 19 54</strong></span>
+              <span>GSM: <strong className="text-white">+212 6 61 46 77 64</strong></span>
             </div>
-            <div className="text-2xl font-black tracking-wider">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">ELE</span>
-              <span className="text-blue-500">CLEF</span>
+            <a href="mailto:CONTACT@ELECLEF.COM" className="text-amber-300 hover:text-amber-200 font-semibold transition">
+              ✉ CONTACT@ELECLEF.COM
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+          <a href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <path d="M 22 50 A 28 28 0 1 1 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+                <path d="M 22 50 A 28 28 0 0 0 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+                <polygon points="56,12 28,52 48,52 42,88 74,46 54,46" fill="url(#logo-grad-cnt)" />
+                <defs>
+                  <linearGradient id="logo-grad-cnt" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#facc15" />
+                    <stop offset="100%" stopColor="#ea580c" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black tracking-widest text-[#7A1523] leading-none">ELECLEF</span>
+              <span className="text-[10px] font-bold tracking-widest text-red-600 uppercase mt-1">Installations Électriques</span>
             </div>
           </a>
 
-          <div className="flex items-center gap-6 text-sm font-medium text-slate-300">
-            <a href="/" className="hover:text-orange-400 transition">Accueil</a>
-            <a href="/services" className="hover:text-orange-400 transition">Nos Services</a>
-            <a href="/contact" className="text-orange-400 font-bold border-b-2 border-orange-500 pb-0.5">Contact / Devis</a>
-          </div>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+            <a href="/" className="text-slate-600 hover:text-red-700 transition">Accueil</a>
+            <a href="/services" className="text-slate-600 hover:text-red-700 transition">Nos Services</a>
+            <a href="/contact" className="text-red-700 border-b-2 border-red-700 pb-1">Contact / Devis</a>
+          </nav>
 
-          <a href="/admin" className="text-xs font-semibold text-slate-200 hover:text-orange-400 border border-slate-700/80 hover:border-orange-500/50 bg-slate-800/50 px-3.5 py-2 rounded-xl transition duration-200">
+          <a href="/admin" className="text-xs font-bold text-white bg-[#7A1523] hover:bg-red-800 px-5 py-2.5 rounded shadow-sm transition">
             Espace Admin
           </a>
-        </nav>
+        </div>
       </header>
 
-      {/* Contenu Contact */}
-      <main className="pt-32 pb-16 px-6 max-w-2xl mx-auto relative z-10 w-full my-auto">
-        <div className="bg-slate-900/90 p-8 md:p-10 rounded-3xl border border-slate-800 shadow-2xl">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-extrabold text-slate-100 mb-2">Demandez un Devis</h1>
-            <p className="text-slate-400 text-sm">Remplissez le formulaire et nous vous contacterons rapidement</p>
+      {/* Contact Content */}
+      <main className="relative py-16 px-8 max-w-7xl mx-auto w-full flex-1 z-10">
+        <div className="grid md:grid-cols-12 gap-12 items-start">
+          
+          {/* Contact Form */}
+          <div className="md:col-span-7 bg-white border border-red-100 p-8 rounded-2xl shadow-lg relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-2 h-full bg-[#7A1523]"></div>
+            
+            <h2 className="text-2xl font-black text-[#7A1523] uppercase mb-6">DEMANDER UN DEVIS / CONTACT</h2>
+            
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Nom complet / Société</label>
+                <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#7A1523]" placeholder="Votre nom ou entreprise" />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Téléphone</label>
+                  <input type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#7A1523]" placeholder="+212 6..." />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Email</label>
+                  <input type="email" className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#7A1523]" placeholder="exemple@domain.com" />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Message / Détails du projet</label>
+                <textarea rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm focus:outline-none focus:border-[#7A1523]" placeholder="Décrivez votre projet d'installation électrique..."></textarea>
+              </div>
+
+              <button type="submit" className="w-full py-3 bg-[#7A1523] hover:bg-red-800 text-white font-bold rounded-lg text-sm uppercase transition shadow-md">
+                ENVOYER LA DEMANDE
+              </button>
+            </form>
           </div>
 
-          {success && <div className="bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 px-4 py-3 rounded-xl mb-6 text-sm text-center">{success}</div>}
-          {error && <div className="bg-rose-950/80 border border-rose-500/50 text-rose-300 px-4 py-3 rounded-xl mb-6 text-sm text-center">{error}</div>}
+          {/* Info Card */}
+          <div className="md:col-span-5 space-y-6">
+            <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl shadow-sm space-y-4">
+              <h3 className="text-lg font-bold text-[#7A1523] uppercase border-b border-slate-200 pb-3">Nos Coordonnées</h3>
+              
+              <div className="space-y-3 text-sm font-semibold text-slate-700">
+                <p className="flex items-center gap-3">📍 <span>Fès, Maroc</span></p>
+                <p className="flex items-center gap-3">📞 <span>FIXE: 05 35 94 19 54</span></p>
+                <p className="flex items-center gap-3">📱 <span>GSM: +212 6 61 46 77 64</span></p>
+                <p className="flex items-center gap-3">📠 <span>FAX: 05 35 65 00 14</span></p>
+                <p className="flex items-center gap-3">✉ <span>CONTACT@ELECLEF.COM</span></p>
+              </div>
+            </div>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-2">Nom Complet</label>
-                <input type="text" name="nom" value={formData.nom} onChange={handleChange} required placeholder="Ex: Reda Mansouri" className="w-full bg-slate-950/80 p-3.5 rounded-xl text-slate-100 border border-slate-800 focus:border-orange-500 focus:outline-none text-sm" />
-              </div>
-              <div>
-                <label className="block text-xs font-medium text-slate-400 mb-2">Téléphone</label>
-                <input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} required placeholder="0600000000" className="w-full bg-slate-950/80 p-3.5 rounded-xl text-slate-100 border border-slate-800 focus:border-orange-500 focus:outline-none text-sm" />
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2">Email</label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="example@gmail.com" className="w-full bg-slate-950/80 p-3.5 rounded-xl text-slate-100 border border-slate-800 focus:border-orange-500 focus:outline-none text-sm" />
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2">Type de Service</label>
-              <select name="type_service" value={formData.type_service} onChange={handleChange} required className="w-full bg-slate-950/80 p-3.5 rounded-xl text-slate-100 border border-slate-800 focus:border-orange-500 focus:outline-none text-sm">
-                <option value="Installation Électrique" className="bg-slate-900">Installation Électrique</option>
-                <option value="Dépannage & Réparation" className="bg-slate-900">Dépannage & Réparation</option>
-                <option value="Mise aux Normes" className="bg-slate-900">Mise aux Normes</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-slate-400 mb-2">Détails de la demande</label>
-              <textarea name="message" value={formData.message} onChange={handleChange} required placeholder="Expliquez votre besoin..." rows={4} className="w-full bg-slate-950/80 p-3.5 rounded-xl text-slate-100 border border-slate-800 focus:border-orange-500 focus:outline-none text-sm" />
-            </div>
-            <button type="submit" disabled={loading} className="w-full text-slate-950 font-bold text-sm py-4 rounded-xl bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 hover:brightness-110 transition shadow-lg shadow-orange-500/25">
-              {loading ? 'Envoi en cours...' : 'Envoyer la demande'}
-            </button>
-          </form>
         </div>
       </main>
 
-      <footer className="text-center py-8 text-xs text-slate-500 border-t border-slate-900 bg-slate-950">
-        <p>&copy; 2026 ELECLEF. Tous droits réservés.</p>
+      {/* Footer */}
+      <footer className="bg-[#7A1523] text-slate-200 text-center py-5 text-xs border-t border-red-900 relative z-10">
+        <p>&copy; 2026 ELECLEF - Installations Électriques MT & BT. Tous droits réservés.</p>
       </footer>
+
     </div>
   );
 }

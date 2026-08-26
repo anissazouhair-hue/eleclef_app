@@ -2,108 +2,125 @@
 'use client';
 
 export default function ServicesPage() {
-  const listServices = [
+  const services = [
     {
-      icon: '⚡',
-      title: 'Installation Électrique',
-      desc: 'Installation complète et sécurisée pour habitations, bureaux et locaux commerciaux selon les normes.',
+      title: "Bâtiments & Lieux Publics",
+      desc: "Étude et réalisation d'installations électriques complètes pour les établissements recevant du public, bureaux et complexes commerciaux.",
+      icon: "🏢"
     },
     {
-      icon: '🔧',
-      title: 'Dépannage & Réparation',
-      desc: 'Détection rapide des pannes, court-circuit et intervention professionnelle garantie 24/7.',
+      title: "Grands Ensembles d'Habitat",
+      desc: "Équipement électrique pour les résidences, immeubles et ensembles d'habitation collectifs selon les normes de sécurité.",
+      icon: "🏗️"
     },
     {
-      icon: '🔌',
-      title: 'Mise aux Normes',
-      desc: 'Rénovation, modernisation et mise en conformité de vos tableaux et installations électriques.',
+      title: "Électrification BT & MT",
+      desc: "Installations Basse Tension et Moyenne Tension, postes de transformation et armoires de distribution électrique.",
+      icon: "⚡"
     },
     {
-      icon: '🛡️',
-      title: 'Maintenance Préventive',
-      desc: 'Contrôle régulier de vos équipements pour éviter les pannes et garantir votre sécurité.',
+      title: "Usage Industriel",
+      desc: "Solutions sur-mesure pour les usines, ateliers et sites industriels : automatisme, câblage lourd et maintenance.",
+      icon: "🏭"
     },
     {
-      icon: '💡',
-      title: 'Éclairage & Domotique',
-      desc: 'Solutions d électricité moderne, éclairage LED architectural et automatisation intelligente.',
-    },
-    {
-      icon: '⚙️',
-      title: 'Tableaux Électriques',
-      desc: 'Montage, câblage et sécurisation des coffrets électriques industriels et domestiques.',
-    },
+      title: "Incendie & Extinction",
+      desc: "Systèmes de détection d'incendie, alarme et extinction automatique pour la protection optimale de vos locaux.",
+      icon: "🧯"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans relative overflow-hidden flex flex-col justify-between">
-      {/* خلفية الألوان */}
-      <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[140px] pointer-events-none" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-600/25 rounded-full blur-[140px] pointer-events-none" />
-
-      {/* Header */}
-      <header className="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800/80 z-50">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 via-orange-500 to-blue-600 flex items-center justify-center shadow-lg shadow-orange-500/20">
-              <span className="text-white text-xl font-black">⚡</span>
+    <div className="min-h-screen bg-white text-slate-800 font-sans flex flex-col justify-between relative overflow-hidden">
+      
+      {/* Top Header */}
+      <header className="w-full border-b border-red-100 bg-white sticky top-0 z-50 shadow-sm">
+        <div className="bg-[#7A1523] text-slate-100 text-xs py-2 px-8">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div className="flex items-center gap-6 font-medium tracking-wide">
+              <span>FIXE: <strong className="text-white">05 35 94 19 54</strong></span>
+              <span>GSM: <strong className="text-white">+212 6 61 46 77 64</strong></span>
             </div>
-            <div className="text-2xl font-black tracking-wider">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">ELE</span>
-              <span className="text-blue-500">CLEF</span>
+            <a href="mailto:CONTACT@ELECLEF.COM" className="text-amber-300 hover:text-amber-200 font-semibold transition">
+              ✉ CONTACT@ELECLEF.COM
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+          <a href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <path d="M 22 50 A 28 28 0 1 1 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+                <path d="M 22 50 A 28 28 0 0 0 78 50" fill="none" stroke="#dc2626" strokeWidth="6" />
+                <polygon points="56,12 28,52 48,52 42,88 74,46 54,46" fill="url(#logo-grad-serv)" />
+                <defs>
+                  <linearGradient id="logo-grad-serv" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#facc15" />
+                    <stop offset="100%" stopColor="#ea580c" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black tracking-widest text-[#7A1523] leading-none">ELECLEF</span>
+              <span className="text-[10px] font-bold tracking-widest text-red-600 uppercase mt-1">Installations Électriques</span>
             </div>
           </a>
 
-          <div className="flex items-center gap-6 text-sm font-medium text-slate-300">
-            <a href="/" className="hover:text-orange-400 transition">Accueil</a>
-            <a href="/services" className="text-orange-400 font-bold border-b-2 border-orange-500 pb-0.5">Nos Services</a>
-            <a href="/contact" className="hover:text-orange-400 transition">Contact / Devis</a>
-          </div>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+            <a href="/" className="text-slate-600 hover:text-red-700 transition">Accueil</a>
+            <a href="/services" className="text-red-700 border-b-2 border-red-700 pb-1">Nos Services</a>
+            <a href="/contact" className="text-slate-600 hover:text-red-700 transition">Contact / Devis</a>
+          </nav>
 
-          <a href="/admin" className="text-xs font-semibold text-slate-200 hover:text-orange-400 border border-slate-700/80 hover:border-orange-500/50 bg-slate-800/50 px-3.5 py-2 rounded-xl transition duration-200">
+          <a href="/admin" className="text-xs font-bold text-white bg-[#7A1523] hover:bg-red-800 px-5 py-2.5 rounded shadow-sm transition">
             Espace Admin
           </a>
-        </nav>
+        </div>
       </header>
 
-      {/* قسم الخدمات (Tous les Services) */}
-      <main className="pt-36 pb-20 px-6 max-w-6xl mx-auto my-auto relative z-10 w-full">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-100 mb-3">Nos Services</h1>
-          <p className="text-slate-400 text-sm max-w-md mx-auto mb-4">
-            Toutes nos prestations électriques professionnelles réunies pour vous.
-          </p>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-red-500 via-orange-500 to-blue-500 mx-auto rounded-full"></div>
+      {/* Main Services Content */}
+      <main className="relative py-16 px-8 max-w-7xl mx-auto w-full flex-1 z-10">
+        
+        {/* Background Watermark Icon */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none w-[600px] h-[600px] z-0">
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <path d="M 20 50 A 30 30 0 1 1 80 50" fill="none" stroke="#7A1523" strokeWidth="5" />
+            <polygon points="58,6 24,52 48,52 40,94 78,44 54,44" fill="#ea580c" />
+          </svg>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {listServices.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-900/90 p-8 rounded-2xl border border-slate-800 hover:border-orange-500/50 transition duration-300 shadow-xl flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-4xl mb-6 bg-gradient-to-tr from-red-600/20 to-orange-500/20 w-16 h-16 rounded-2xl flex items-center justify-center border border-orange-500/30">
-                  {item.icon}
-                </div>
-                <h2 className="text-xl font-bold mb-3 text-slate-100">{item.title}</h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">{item.desc}</p>
-              </div>
-
-              <a
-                href="/contact"
-                className="inline-block text-center text-xs font-bold text-orange-400 hover:text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/30 py-3 rounded-xl transition duration-200"
-              >
-                Commander ce service &rarr;
-              </a>
+        <div className="relative z-10 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-block bg-red-50 border border-red-200 text-[#7A1523] text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest">
+              Savoir-Faire & Expertise
             </div>
-          ))}
+            <h1 className="text-4xl font-black text-slate-900 uppercase">NOS SERVICES & EXPERTISES</h1>
+            <p className="text-slate-600 text-sm font-medium">
+              ELECLEF met à votre disposition des solutions électriques haute performance adaptées aux exigences des secteurs tertiaire, industriel et résidentiel.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((s, idx) => (
+              <div key={idx} className="bg-white border border-red-100 rounded-2xl p-6 shadow-lg shadow-red-950/5 relative overflow-hidden group hover:border-red-300 transition">
+                <div className="absolute top-0 left-0 w-2 h-full bg-[#7A1523] group-hover:bg-amber-500 transition-colors"></div>
+                <div className="text-3xl mb-4">{s.icon}</div>
+                <h3 className="text-[#7A1523] font-bold text-lg mb-2">{s.title}</h3>
+                <p className="text-slate-600 text-xs leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+
       </main>
 
-      <footer className="text-center py-8 text-xs text-slate-500 border-t border-slate-900 bg-slate-950 relative z-10">
-        <p>&copy; 2026 ELECLEF. Tous droits réservés.</p>
+      {/* Footer */}
+      <footer className="bg-[#7A1523] text-slate-200 text-center py-5 text-xs border-t border-red-900 relative z-10">
+        <p>&copy; 2026 ELECLEF - Installations Électriques MT & BT. Tous droits réservés.</p>
       </footer>
+
     </div>
   );
 }
