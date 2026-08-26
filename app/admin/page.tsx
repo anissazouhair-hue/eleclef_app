@@ -92,7 +92,6 @@ export default function AdminPage() {
                     className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 text-sm pr-24 focus:outline-none focus:border-[#7A1523]" 
                     placeholder="••••••••" 
                   />
-                  {/* زر إظهار/إخفاء كلمة السر */}
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
