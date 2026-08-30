@@ -44,7 +44,7 @@ export default function AdminPage() {
               </button>
             )}
             <a href="/" className="text-xs font-bold text-slate-600 hover:text-red-700 transition uppercase">
-              ← Retour au site
+              ← Retour à l'accueil
             </a>
           </div>
         </div>
